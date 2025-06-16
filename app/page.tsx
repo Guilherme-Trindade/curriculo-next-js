@@ -1,5 +1,5 @@
-import Portfolio from "../portfolio"
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <Portfolio />
+    redirect("/portifolio")
 }
