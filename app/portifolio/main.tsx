@@ -1,4 +1,3 @@
-"use client"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -6,10 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator"
 import {
   Github,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
   ExternalLink,
   Code,
   Database,
@@ -18,67 +13,12 @@ import {
   Calendar,
   Building,
 } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=120&width=120"
-                alt="Foto de perfil"
-                width={120}
-                height={120}
-                className="rounded-full border-4 border-blue-100"
-              />
-            </div>
-            <div className="text-center md:text-left flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Seu Nome</h1>
-              <p className="text-xl text-blue-600 mb-3">Desenvolvedor Full Stack</p>
-              <p className="text-gray-600 max-w-2xl">
-                Desenvolvedor apaixonado por criar soluções inovadoras e experiências digitais excepcionais.
-                Especializado em tecnologias modernas e sempre em busca de novos desafios.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-gray-600">
-                <Mail className="w-4 h-4" />
-                <span>seu.email@exemplo.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <Phone className="w-4 h-4" />
-                <span>(11) 99999-9999</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <MapPin className="w-4 h-4" />
-                <span>São Paulo, SP</span>
-              </div>
-              <div className="flex gap-2 mt-2">
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="https://github.com" target="_blank">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </Link>
-                </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="https://linkedin.com" target="_blank">
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    LinkedIn
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
+export default function Main() {
+    return (
+        
       <main className="max-w-6xl mx-auto px-4 py-8 space-y-12">
-        {/* Habilidades Técnicas */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
             <Code className="w-6 h-6 text-blue-600" />
@@ -115,28 +55,12 @@ export default function Portfolio() {
                 <div className="flex flex-wrap gap-1">
                   <Badge variant="secondary">Node.js</Badge>
                   <Badge variant="secondary">Express</Badge>
-                  <Badge variant="secondary">Python</Badge>
-                  <Badge variant="secondary">PostgreSQL</Badge>
+                  <Badge variant="secondary">PHP</Badge>
+                  <Badge variant="secondary">Symfony</Badge>
+                  <Badge variant="secondary">Laravel</Badge>
+                  <Badge variant="secondary">MysqlSQL</Badge>
                   <Badge variant="secondary">MongoDB</Badge>
                   <Badge variant="secondary">REST APIs</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Smartphone className="w-5 h-5 text-purple-600" />
-                  Mobile
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex flex-wrap gap-1">
-                  <Badge variant="secondary">React Native</Badge>
-                  <Badge variant="secondary">Flutter</Badge>
-                  <Badge variant="secondary">Expo</Badge>
-                  <Badge variant="secondary">iOS</Badge>
-                  <Badge variant="secondary">Android</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -162,7 +86,6 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Experiência Profissional */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
             <Building className="w-6 h-6 text-blue-600" />
@@ -173,8 +96,8 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle className="text-xl">Desenvolvedor Full Stack Sênior</CardTitle>
-                    <CardDescription className="text-lg text-blue-600">Empresa Tech Ltda</CardDescription>
+                    <CardTitle className="text-xl">Desenvolvedor Full Stack</CardTitle>
+                    <CardDescription className="text-lg text-blue-600">Moveis Simonetti</CardDescription>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500">
                     <Calendar className="w-4 h-4" />
@@ -183,41 +106,37 @@ export default function Portfolio() {
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Desenvolvimento de aplicações web modernas usando React, Next.js e TypeScript</li>
-                  <li>• Criação de APIs RESTful robustas com Node.js e Express</li>
-                  <li>• Implementação de arquiteturas escaláveis na AWS</li>
-                  <li>• Liderança técnica de equipe de 5 desenvolvedores</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-xl">Desenvolvedor Frontend</CardTitle>
-                    <CardDescription className="text-lg text-blue-600">StartupXYZ</CardDescription>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-500">
-                    <Calendar className="w-4 h-4" />
-                    <span>2020 - 2022</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Desenvolvimento de interfaces responsivas e acessíveis</li>
-                  <li>• Integração com APIs e serviços externos</li>
-                  <li>• Otimização de performance e SEO</li>
-                  <li>• Colaboração próxima com designers UX/UI</li>
+                <ul className="space-y-2 font-bold">
+                  <li>
+                    - Dashboard de Indicadores Logísticos
+                    <ul className="pl-5 text-gray-500">
+                        <li> • Descrição: Painel interno para acompanhamento de entregas, volume por transportadora e atrasos.</li>
+                        <li> • Stack: React.js, Chart.js, API RESTful em Symfony.</li>
+                        <li> • Destaques: Aumento da visibilidade operacional e tomada de decisão mais ágil.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    - Integrações com sistemas de terceiros
+                    <ul className="pl-5 text-gray-500">
+                        <li> • Descrição: Desenvolvimento de integrações REST com plataformas de nota fiscal eletrônica, rastreamento e marketplaces.</li>
+                        <li> • Stack: PHP, Node.js</li>
+                        <li> • Destaques: Automação de processos e eliminação de tarefas manuais repetitivas.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    - Sistema de Gestão de Pedidos B2B
+                    <ul className="pl-5 text-gray-500">
+                        <li> • Descrição: Aplicação web para representantes comerciais realizarem pedidos diretamente ao sistema da empresa, com integração ao ERP.</li>
+                        <li> • Stack: Symfony, MySQL</li>
+                        <li> • Destaques: Otimização do tempo de venda em campo e redução de erros operacionais.</li>
+                    </ul>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        {/* Projetos em Destaque */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Projetos em Destaque</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -325,14 +244,13 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Educação */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Educação & Certificações</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle>Bacharelado em Ciência da Computação</CardTitle>
-                <CardDescription>Universidade Federal de São Paulo - 2018-2022</CardDescription>
+                <CardTitle>Análise e Desenvolvimento de Sistemas</CardTitle>
+                <CardDescription>Multivix - 2021-2023</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
@@ -347,45 +265,33 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span>AWS Certified Developer</span>
+                  <span>Microsserviços: explorando os conceitos</span>
                   <Badge>2023</Badge>
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <span>Google Cloud Professional</span>
+                  <span>Administração do MySQL: segurança e otimização do banco</span>
                   <Badge>2022</Badge>
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <span>React Developer Certification</span>
-                  <Badge>2021</Badge>
+                  <span>Entrega Contínua: confiabilidade e qualidade na implantação de software</span>
+                  <Badge>2023</Badge>
+                </div>
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <span>Deploy no Amazon EC2: alta disponibilidade e escalabilidade de uma aplicação</span>
+                  <Badge>2023</Badge>
+                </div>
+                <Separator />
+                <div className="flex items-center justify-between">
+                  <span>Design Patterns em: padrões comportamentais e padrões estruturais</span>
+                  <Badge>2024</Badge>
                 </div>
               </CardContent>
             </Card>
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="mb-4">Vamos trabalhar juntos!</p>
-          <div className="flex justify-center gap-4">
-            <Button variant="outline" asChild>
-              <Link href="mailto:seu.email@exemplo.com">
-                <Mail className="w-4 h-4 mr-2" />
-                Enviar Email
-              </Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="https://linkedin.com" target="_blank">
-                <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </footer>
-    </div>
-  )
+    )
 }
