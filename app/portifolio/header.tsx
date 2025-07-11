@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button"
 import {
   Github,
@@ -38,7 +37,9 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2 text-gray-600">
                 <Phone className="w-4 h-4" />
-                <span className="text-gray-500">(27) 99785-3165</span>
+                <Link href="https://wa.me/5527997853165" className="text-grey-600 hover:underline" target="_blank">
+                <span className="text-gray-500">+55 (27) 99785-3165</span>
+                </Link>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
                 <MapPin className="w-4 h-4" />

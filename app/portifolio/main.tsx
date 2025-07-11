@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import * as Dialog from "@radix-ui/react-dialog"
 import {
   Github,
   ExternalLink,
@@ -12,12 +13,12 @@ import {
   Smartphone,
   Calendar,
   Building,
+  X,
 } from "lucide-react"
 import Link from "next/link"
 
 export default function Main() {
     return (
-        
       <main className="max-w-6xl mx-auto px-4 py-8 space-y-12">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
@@ -34,7 +35,58 @@ export default function Main() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="flex flex-wrap gap-1">
-                  <Badge variant="secondary">React</Badge>
+                  <Badge variant="secondary"><Dialog.Root>
+                    <Dialog.Trigger>React</Dialog.Trigger>
+                    <Dialog.Portal>
+        <Dialog.Overlay className="bg-black/50 fixed inset-0" />
+        <Dialog.Content className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="flex justify-between items-start mb-4">
+            <div>
+              <h2 className="text-2xl font-bold flex items-center gap-2">
+                ⚛️ React
+              </h2>
+              <p className="text-gray-600 mt-1">
+                React JS é uma biblioteca JavaScript criada pelo Facebook para construir interfaces de usuário (UI) de forma rápida, modular e eficiente, principalmente em aplicações web de página única (SPA).
+              </p>
+            </div>
+            <Dialog.Close asChild>
+              <button className="text-gray-500 hover:bg-red-600 hover:text-white hover:rounded-full p-1">
+                <X size={20} />
+              </button>
+            </Dialog.Close>
+          </div>
+
+          <div className="mt-4">
+            <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-1">
+              🔧 Principais características:
+            </h3>
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <li>
+                <span className="font-semibold text-black">Componentes reutilizáveis:</span> você monta a interface dividindo em partes menores (como Lego).
+              </li>
+              <li>
+                <span className="font-semibold text-black">Virtual DOM:</span> melhora a performance ao atualizar só o que mudou na tela.
+              </li>
+              <li>
+                <span className="font-semibold text-black">Reatividade com estado:</span> usa <code>useState</code>, <code>useEffect</code> e outros hooks.
+              </li>
+              <li>
+                <span className="font-semibold text-black">Unidirecional:</span> dados fluem em uma única direção, facilitando controle e debug.
+              </li>
+            </ul>
+          </div>
+
+          <div className="mt-6 text-right">
+            <Dialog.Close asChild>
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-md transition">
+                Fechar
+              </button>
+            </Dialog.Close>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+                    </Dialog.Root>
+                  </Badge>
                   <Badge variant="secondary">Next.js</Badge>
                   <Badge variant="secondary">TypeScript</Badge>
                   <Badge variant="secondary">Tailwind CSS</Badge>
